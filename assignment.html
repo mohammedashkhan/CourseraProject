@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My First Web Page</title>
+<style>
+	body{
+		color: Green;
+		text-align: center;
+		font-family: helvetica;
+		background-color:  	#DEB887;
+	}
+
+	p{
+		color: gray;
+		font-family: initial;
+	}
+	h3{
+		color: cyan;
+		font-size: 30px;
+	}
+	h6{
+		color: green;
+		background:yellow;
+	}
+	table{
+		background-color: #61122f;
+
+	}
+</style>
+</head>
+<body>
+	<h1 style="color: cyan;" >Cascade of CSS Example</h1>
+	<h2 style="color: green;">Heading 1</h2>
+	<p>Inheritence allows us to write more global styles on parent element and the "fine-tune" the styles
+	for some of the child elements as needed.Such approach makes writing CSS very efficent.</p>
+	<h2 style="color: green;">Heading 2</h2>
+	<h3 > The Cascade</h3>
+	<p>CSS is an acronym of Cascading Style Sheets,which indicates that the notion of the cascade is important.At its most basic level indicates that the order of CSS rules matter,but it's more complex than that.What selectors win out in the cascade depends on three factors(these are listed in order of weight earlier ones will overrule later ones):</p>
+	<ol>
+		<li>Important</li>
+		<li>Specificity</li>
+		<li>Source order</li>
+	</ol>
+
+	<h4 style="font-size: 22px">1.Importance</h4>
+	<p>In CSS,there is a special piece of  syntax you can use to make sure that a certain declaration will always win over all others:!important.</p>
+    <h5 style="font-size: 22px">2.Specificity</h5>
+    <p>Specificity is basically a measure of how specific a selector-how many elements it could match.Class selector have an even higher specificity,so will win against element selector.ID selectors have an even higher specificiy,so will win against class selectors.The only way to win against an ID selector is to use!important.  </p>
+  <center>
+    <table border="2">
+    	<tr>
+    		<th>
+    			Selector
+    		</th>
+    		<th>
+    			Thousands
+    		</th>
+    		<th>
+    			Hundreds
+    		</th>
+    		<th>
+    			Tens
+    		</th>
+    		<th>
+    			Ones
+    		</th>
+    		<th>
+    			Total Specificity
+    		</th>
+    	</tr>
+    	<tr>
+    		<td>h1</td>
+    		<td>0</td>
+    		<td>0</td>
+    		<td>0</td>
+    		<td>1</td>
+    		<td>0001</td>
+    	</tr>
+    	<tr>
+    		<td>#important</td>
+    		<td>0</td>
+    		<td>1</td>
+    		<td>0</td>
+    		<td>0</td>
+    		<td>0100</td>
+    	</tr>
+
+    	<tr>
+    		<td>h1 + p::first-letter</td>
+    		<td>0</td>
+    		<td>0</td>
+    		<td>0</td>
+    		<td>3</td>
+    		<td>0003</td>
+    	</tr>
+
+    	<tr>
+    		<td>li > a[href*="en-US"] > .inline-warning</td>
+    		<td>0</td>
+    		<td>0</td>
+    		<td>2</td>
+    		<td>2</td>
+    		<td>0022</td>
+    	</tr>
+
+    	<tr>
+    		<td>#important div > div > a:hover,inside an element's style attribute</td>
+    		<td>1</td>
+    		<td>1</td>
+    		<td>1</td>
+    		<td>3</td>
+    		<td>1113</td>
+    	</tr>
+    </table></center>
+<p><b>NOTE:</b>If multiple selector have the same importance and specificity,which selector wins is decided by which comes later in the <b>Source Order</b></p>
+<h7 style="font-size: 22px">3.Source Order</h7>
+<p> As mentioned above,if multiple competing selectors have the same importance and specifity,the third factor that comes into play to help decide which rule wins is source order---later rules will win over earlier rules.</p>
+</table>
+<footer style="color: red; font-family: oxygen;">
+	<div>This page is Created by M Ashkhan Ahmed</div>
+	<div>Thanks for <b>Coursera</b> Who is given the Chance to learning with coursera</div>
+</footer>    
+</body>
+</html>
